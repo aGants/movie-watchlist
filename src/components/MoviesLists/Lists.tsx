@@ -6,10 +6,9 @@ import Item from './Item';
 
 type Props = {
   lists: List[];
-  isLoading?: boolean;
 };
 
-const MovieLists: React.FC<Props> = ({ lists, isLoading }) => {
+const MovieLists: React.FC<Props> = ({ lists }) => {
   return (
     <div>
       {lists.map(item =>

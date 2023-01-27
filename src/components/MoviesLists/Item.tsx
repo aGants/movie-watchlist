@@ -11,7 +11,10 @@ const MovieListsItem: React.FC<Props> = ({
   title, image,
 }) => {
   return (
-    <div>{title}</div>
+    <div>
+      {title}
+    {/* <img src={image.url}/> */}
+    </div>
   );
 };
 

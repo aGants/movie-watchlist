@@ -3,7 +3,9 @@ import React, { useCallback, useState } from 'react';
 import { apiKey, apiHost } from 'core/constants';
 import { List } from 'core/types';
 
-import Lists from 'core/components/MoviesLists/Lists';
+import Lists from 'components/MoviesLists/Lists';
+import SearchBar from 'components/SearchBar';
+import Loading from 'components/Loading';
 
 const options = {
   method: 'GET',
@@ -15,7 +17,7 @@ const options = {
 
 const PageSearch = () => {
   const [list, setList] = useState<List[]>([]);
-  const [searchValue, setSearchValue] = useState('');
+  const [isLoading, setIsLoading] = useState(false);
 
   const getAPI = useCallback(async (value: string) => {
     const request = await fetch(`https://online-movie-database.p.rapidapi.com/title/v2/find?title=${value}&limit=20&sortArg=moviemeter%2Casc'`, options)
@@ -26,30 +28,18 @@ const PageSearch = () => {
   }, []);
 
   const getData = useCallback(async (value: string) => {
+    setIsLoading(true);
+
     const data = await getAPI(value);
 
-    console.log(data);
     setList(data);
-  }, []);
-
-  const onSearch = useCallback( (value: string) => {
-    setSearchValue(value);
-
-    if (value) {
-      getData(value);
-    }
-  }, []);
+    setIsLoading(false);
+  }, [getAPI]);
 
   return (
     <div>
-      <input
-        value={searchValue}
-        type="text"
-        onChange={e => setSearchValue(e.target.value)}
-        onClick={() => onSearch(searchValue)}
-      />
-      <button onClick={() => onSearch(searchValue)}>search</button>
-      <Lists lists={list} />
+      <SearchBar getData={getData} />
+      {isLoading ? <Loading /> : <Lists lists={list} />}
     </div>
   );
 };
