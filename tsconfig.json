@@ -1,0 +1,36 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "src/",
+    "target": "esnext",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "jsx": "react",
+    "sourceMap": true,
+
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+
+    "strict": true,
+    "alwaysStrict": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+
+    "lib": ["esnext", "dom"],
+
+    "types": [
+      "axios",
+      "node",
+      "react",
+      "react-dom",
+      "redux",
+      "react-redux"
+    ]
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
