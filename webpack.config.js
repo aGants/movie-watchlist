@@ -74,6 +74,10 @@ module.exports = {
     ]
   }, resolve: {
     extensions: ["*", ".tsx", ".ts", ".js", ".jsx", ".scss"],
+    alias: {
+      'core': path.resolve(__dirname, 'src/'),
+      'components': path.resolve(__dirname, 'src/components'),
+    }
   },
   plugins: [
     new HtmlWebpackPlugin({
