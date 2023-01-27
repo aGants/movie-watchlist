@@ -1,4 +1,7 @@
 const path = require('path');
+const webpack = require('webpack');
+
+require('dotenv').config({ path: './.env' });
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniSccExtractPlugin = require('mini-css-extract-plugin');
@@ -25,7 +28,6 @@ module.exports = {
   },
   devServer: {
     port: 3001,
-    open: true,
     hot: true,
   },
   module: {
@@ -81,5 +83,8 @@ module.exports = {
       filename: prodMode ? "[name].[contenthash].css" : '[name].css'
     }),
     new CleanWebpackPlugin(),
+    new webpack.DefinePlugin({
+      "process.env": JSON.stringify(process.env),
+    }),
   ],
 }

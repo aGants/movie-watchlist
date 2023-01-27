@@ -19,6 +19,7 @@
     "alwaysStrict": true,
     "strictNullChecks": true,
     "strictFunctionTypes": true,
+    "noImplicitAny": true,
 
     "lib": ["esnext", "dom"],
 

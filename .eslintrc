@@ -7,7 +7,7 @@
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
-    "airbnb"
+    "airbnb-typescript"
   ],
   "overrides": [
   ],
@@ -16,7 +16,10 @@
     "sourceType": "module",
     "project": "./tsconfig.json",
     "tsconfigRootDir": ".",
-    "createDefaultProgram": true
+    "createDefaultProgram": true,
+    "ecmaFeatures": {
+      "jsx": true
+    }
   },
   "settings": {
     "react": {
@@ -93,15 +96,6 @@
         }
       }
     ],
-    "@typescript-eslint/no-explicit-any": "warn",
-    "@typescript-eslint/camelcase": "off",
-    "@typescript-eslint/ban-ts-comment": "warn",
-    "react/prop-types": "off",
-    "react/prefer-stateless-function": "warn",
-    "react/jsx-filename-extension": [ "error", { "extensions": [".spec.js", ".jsx", ".tsx"] }],
-    "react/style-prop-object": "off",
-    "react/destructuring-assignment": "off",
-    "react/function-component-definition": "off",
     "no-plusplus": "off",
     "no-else-return": ["error", { "allowElseIf": true }],
     "prefer-destructuring": "off",
@@ -109,11 +103,6 @@
     "func-style": ["error", "expression",  { "allowArrowFunctions": true }],
     "no-useless-constructor": "off",
     "arrow-parens": ["error", "as-needed", { "requireForBlockBody": false }],
-    "import-newlines/enforce": ["error", { "items": 3, "max-len": 120, "semi": true }],
-    "import/no-extraneous-dependencies": ["error", {"devDependencies": true}],
-    "@typescript-eslint/no-useless-constructor": "error",
-    "@typescript-eslint/explicit-function-return-type": "off",
-    "@typescript-eslint/no-non-null-assertion": "off",
     "padding-line-between-statements": [
       "error",
       { "blankLine": "always", "prev": ["block-like", "block", "for"], "next": "*" },
@@ -122,7 +111,23 @@
       { "blankLine": "always", "prev": ["const", "let"], "next": "*"},
       { "blankLine": "always", "prev": ["function"], "next": ["function"]},
       { "blankLine": "any", "prev": ["const", "let"], "next": ["const", "let"]}
-    ]
+    ],
+    "@typescript-eslint/no-explicit-any": "warn",
+    "@typescript-eslint/camelcase": "off",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "react/prop-types": "off",
+    "@typescript-eslint/no-useless-constructor": "error",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "react/prefer-stateless-function": "warn",
+    "react/jsx-filename-extension": [ "error", { "extensions": [".jsx", ".tsx"] }],
+    "react/style-prop-object": "off",
+    "react/destructuring-assignment": "off",
+    "react/function-component-definition": "off",
+    "import/named": "off",
+    "import-newlines/enforce": ["error", { "items": 3, "max-len": 120, "semi": true }],
+    "import/no-extraneous-dependencies": "off",
+    "import/prefer-default-export": "off"
   }
 }
 
