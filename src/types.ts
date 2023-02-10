@@ -1,6 +1,4 @@
 export type Poster = {
-  height: number;
-  width: number;
   id: string;
   url: string;
 };

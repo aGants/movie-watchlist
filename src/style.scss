@@ -1,0 +1,13 @@
+* {
+  box-sizing: border-box;
+  font: 0.875em normal Roboto, sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: var(--main);
+  overflow-x: hidden;
+}

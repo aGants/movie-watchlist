@@ -34,7 +34,7 @@
     "paths": {
       "core/*": ["*"],
       "components/*": ["components/*"],
-      "styles": ["styles"],
+      "styled": ["styled"],
     }
   },
   "include": ["src/**/*"],

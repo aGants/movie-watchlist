@@ -43,7 +43,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.scss$/,
+        test: /\.s[ac]ss$/,
         exclude: /node_modules/,
         use: [
           prodMode ? MiniSccExtractPlugin.loader : 'style-loader',
@@ -77,7 +77,7 @@ module.exports = {
     alias: {
       'core': path.resolve(__dirname, 'src/'),
       'components': path.resolve(__dirname, 'src/components'),
-      'styles': path.resolve(__dirname, 'src/styles'),
+      'styled': path.resolve(__dirname, 'src/styled'),
     }
   },
   plugins: [
