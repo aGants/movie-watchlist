@@ -23,6 +23,11 @@ type BoxProps = {
   right?: string;
 };
 
+type TextProps = {
+  isTitle?: boolean;
+  isSubtitle?: boolean;
+};
+
 export const Box = styled.div<BoxProps>`
   display: block;
   box-sizing: border-box;
@@ -31,12 +36,12 @@ export const Box = styled.div<BoxProps>`
   right: ${props => props.right || 'auto'};
   width: ${props => props.width || 'auto'};
   height: ${props => props.height || 'auto'};
-  border: ${props => props.border || 'default'};
-  border-radius: ${props => props.borderRadius || 'default'};
+  border: ${props => props.border || 'initial'};
+  border-radius: ${props => props.borderRadius || 'initial'};
   margin: ${props => props.margin || 'auto'};
   padding: ${props => props.padding || 'auto'};
-  color: ${props => props.color || 'default'};
-  background-color: ${props => props.bgColor || 'none'};
+  color: ${props => props.color || 'initial'};
+  background-color: ${props => props.bgColor || 'transparent'};
 `;
 
 export const Flex = styled(Box)<FlexProps & BoxProps>`
@@ -45,14 +50,11 @@ export const Flex = styled(Box)<FlexProps & BoxProps>`
   justify-content: ${props => props.justifyContent || 'flex-start'};
   align-items: ${props => props.alignItems || 'stretch'};
   align-content: ${props => props.alignContent || 'normal'};
-  gap: ${props => props.gap || 'default'};
+  gap: ${props => props.gap || 'initial\t'};
   flex-wrap: ${props => props.wrap || 'wrap'};
 `;
 
-export const Title = styled.span`
-  font-size: 1.875em;
-`;
-
-export const Text = styled.span`
-  font-size: 0.875em;
+export const Text = styled.span<TextProps>`
+  color: ${props => (props.isTitle ? 'var(--second)' : props.isSubtitle ? 'var(--third)' : 'var(--text)')};
+  font-size: ${props => (props.isTitle ? '20px' : props.isSubtitle ? '18px' : '16px')};
 `;

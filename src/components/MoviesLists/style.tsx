@@ -1,21 +1,23 @@
 import styled from 'styled-components';
+import { Box } from 'styled';
 
 export const PosterImage = styled.img`
-  width: 180px;
-  margin: 15px 10px;
-  border-radius: 4px;
-  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
   filter: grayscale(40%);
-  box-shadow: 0 4px 16px 0 rgb(0 0 0 / 8%);
-  transition: .4s ease-out;
-  
-  &:hover {
-    filter: none;
-    box-shadow: 0 4px 16px 0 rgb(0 0 0 / 30%);
-  }
-  
-  &:active {
-    box-shadow: 0 4px 16px 0 rgb(0 0 0 / 60%);
-  }
 `;
 
+export const ItemStyled = styled(Box)`
+  box-shadow: 0 4px 16px 0 rgb(50, 50, 93,.1);
+  transition: .4s ease-out;
+  cursor: pointer;
+  
+  &:hover {
+    box-shadow: 0 4px 16px 0 rgb(50, 50, 93,.2);
+  }
+
+  &:active {
+    box-shadow: 0 4px 16px 0 rgb(50, 50, 93,.3);
+  }
+`;
