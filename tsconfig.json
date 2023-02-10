@@ -33,7 +33,8 @@
     ],
     "paths": {
       "core/*": ["*"],
-      "components/*": ["components/*"]
+      "components/*": ["components/*"],
+      "styles": ["styles"],
     }
   },
   "include": ["src/**/*"],
