@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  font: 16px normal Roboto, sans-serif;
 }
 
 body {
@@ -10,4 +9,5 @@ body {
   width: 100%;
   background-color: var(--main);
   overflow-x: hidden;
+  color: var(--fourth);
 }
