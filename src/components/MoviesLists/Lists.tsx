@@ -10,9 +10,16 @@ type Props = {
 };
 
 const MovieLists: React.FC<Props> = ({ lists }) => {
-  return (
-    <Flex justifyContent="space-around" alignItems="center" width="100%">
+  if (lists) {
+    return (
+    <Flex justifyContent="flex-start" alignItems="center" width="100%">
       {lists.map(item => <Item key={item.id} {...item}/>)}
+    </Flex>);
+  }
+
+  return (
+    <Flex margin="0 auto" justifyContent="center" alignItems="center">
+      <p>Not Found</p>
     </Flex>
   );
 };

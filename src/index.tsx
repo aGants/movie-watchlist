@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDom from 'react-dom/client';
+import './vars.scss';
+import './style.scss';
 
-import PageSearch from './pages/Search';
+import Search from 'core/pages/Search';
 
 const root = document.getElementById('root');
 
-const App = () => (<PageSearch />);
+const App = () => <Search />;
 
 ReactDom
   .createRoot(root!)

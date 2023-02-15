@@ -1,20 +1,20 @@
 import styled from 'styled-components';
-import { Flex, radius } from 'styled';
+import { Flex, constants } from 'styled';
 
 export const PosterImage = styled.img`
   position: absolute;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  border-radius: ${radius.rBox};
+  border-radius: ${constants.radius};
 `;
 
 export const ItemStyled = styled(Flex)`
-  box-shadow: 0 5px 15px 0 rgb(0 0 0 / 30%);
+  box-shadow: 0 5px 15px 0 rgb(0 0 0 / .3);
   transition: .4s ease-out;
   cursor: pointer;
-  border-radius: ${radius.rBox};
-  filter: brightness(0.9);
+  border-radius: ${constants.radius};
+  filter: brightness(0.8);
 
   &:hover {
     filter: brightness(1);
@@ -34,11 +34,14 @@ export const AddButton = styled.button`
   
   color: var(--fourth);
   background: transparent;
-  backdrop-filter: blur(5px) brightness(1.2);
+  backdrop-filter: blur(5px) invert(.3) brightness(.95);
 
-  transition: .4s ease-out;
   
   &:hover {
-    backdrop-filter: blur(5px) brightness(1.5);
+    backdrop-filter: blur(20px) invert(.3) brightness(1);
+  }
+  
+  &:active {
+    backdrop-filter: blur(30px) invert(.3) brightness(1.05);
   }
 `;

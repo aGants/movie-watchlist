@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 
 import { apiKey, apiHost } from 'core/constants';
 import { List } from 'core/types';
+import { Flex } from 'styled';
 
 import Lists from 'components/MoviesLists/Lists';
 import SearchBar from 'components/SearchBar';
@@ -37,10 +38,10 @@ const PageSearch = () => {
   }, [getAPI]);
 
   return (
-    <div>
+    <Flex flexDirection="column" justifyContent="center" alignItems="center">
       <SearchBar getData={getData} />
       {isLoading ? <Loading /> : <Lists lists={list} />}
-    </div>
+    </Flex>
   );
 };
 

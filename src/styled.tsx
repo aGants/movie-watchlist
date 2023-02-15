@@ -67,6 +67,6 @@ export const Text = styled.span<TextProps>`
   font-family: Roboto, sans-serif;
 `;
 
-export const radius = {
-  rBox: '5px',
+export const constants = {
+  radius: '5px',
 };

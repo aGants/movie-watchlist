@@ -1,5 +1,9 @@
 import React, { useCallback, useState } from 'react';
 
+import { Box } from 'styled';
+
+import { Bar } from './style';
+
 type Props = {
   getData: (arg: string) => void
 };
@@ -7,7 +11,11 @@ type Props = {
 const SearchBar: React.FC<Props> = ({ getData }) => {
   const [searchValue, setSearchValue] = useState('');
 
-  const onSearch = useCallback( (value: string) => {
+  const onSearch = useCallback( (e: React.KeyboardEvent, value: string) => {
+    if (e.key !== 'Enter') return;
+
+    if (value === '') return;
+
     setSearchValue(value);
 
     if (value) {
@@ -16,15 +24,14 @@ const SearchBar: React.FC<Props> = ({ getData }) => {
   }, []);
 
   return (
-    <div>
-      <input
+    <Box margin="0 auto">
+      <Bar
         value={searchValue}
         type="text"
         onChange={e => setSearchValue(e.target.value)}
-        onClick={() => onSearch(searchValue)}
+        onKeyDown={e => onSearch(e, searchValue)}
       />
-      <button onClick={() => onSearch(searchValue)}>search</button>
-    </div>
+    </Box>
   );
 };
 
